@@ -16,11 +16,10 @@
 
 <body>
 <main role="main">
-
     <section class="text-center">
         <div class="container py-2 col-4">
             <tr>
-                <h3>Hello, I'm</h3>
+                <h3 class="mt-auto mb-0">Hello, I'm</h3>
                 <h1 th:text="${fullName}"></h1>
                 <p class="lead" th:text="${description}"></p>
                 <p>
@@ -35,7 +34,8 @@
 
         <div class="carousel-indicators">
             <th:block th:each="i: ${#numbers.sequence(0, repositories.size - 1)}">
-                <button type="button" data-bs-target="#carouselExampleDark" th:data-bs-slide-to="${i}" th:class="${i == 0} ? active : ''"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" th:data-bs-slide-to="${i}"
+                        th:class="${i == 0} ? active : ''"></button>
             </th:block>
         </div>
 
@@ -50,12 +50,13 @@
                                         <div class="card-header text-center" th:text="${repository[i].name}"></div>
                                         <div class="card-body d-flex flex-column">
                                             <a th:href="${repository[i].htmlUrl}"
-                                               class="btn btn-sm btn-block btn-outline-secondary my-2">GitHub Repository
-                                                Link</a>
+                                               class="btn btn-sm btn-block btn-outline-secondary my-2">GitHub Repository Link</a>
                                             <p class="card-text text-muted" th:text="${repository[i].description}"></p>
                                             <div class="d-flex mt-auto justify-content-between">
-                                                <span class="badge bg-secondary" th:text="${repository[i].language}"></span>
-                                                <small class="text-muted" th:text="${repository[i].getSimpleDate}"></small>
+                                                <span class="badge bg-secondary"
+                                                      th:text="${repository[i].language}"></span>
+                                                <small class="text-muted"
+                                                       th:text="${repository[i].getSimpleDate}"></small>
                                             </div>
                                         </div>
                                     </div>
@@ -81,34 +82,19 @@
     <div class="container px-4 py-2" id="hanging-icons">
         <h3 class="pb-2 border-bottom">Experience</h3>
         <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
-            <div class="col d-flex align-items-start">
-                <div>
-                    <h4>Example 1</h4>
-                    <p class="text-muted">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
+            <th:block th:each="experience : ${experiences}">
+                <div class="col d-flex align-items-start">
+                    <div>
+                        <h4 th:text="${experience.title}"></h4>
+                        <p class="text-muted" th:text="${experience.getDescription}"></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div>
-                    <h4>Example 2</h4>
-                    <p class="text-muted">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
-                </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div>
-                    <h4>Example 3</h4>
-                    <p class="text-muted">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
-                </div>
-            </div>
+            </th:block>
         </div>
     </div>
 
     <footer class="py-2 mt-4 lead text-center border-top fixed-bottom bg-light">
-        <div class="container">
-            Copyright © 2022 A Bootstrap template for displaying your GitHub repositories!
-        </div>
+        Copyright © 2022 A Bootstrap template for displaying your GitHub repositories!
     </footer>
 </main>
 </body>

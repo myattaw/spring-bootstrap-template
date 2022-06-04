@@ -4,3 +4,16 @@ description:
   - "Use this paragraph to give an introduction about yourself."
 githubUsername: "spring-projects"
 linkedInUsername: "linkedIn Username"
+experience:
+  - title: "Example 1"
+    description:
+      - "Paragraph of text beneath the heading to explain the heading."
+      - "We'll add onto it with another sentence and probably just keep going until we run out of words."
+  - title: "Example 2"
+    description:
+      - "Paragraph of text beneath the heading to explain the heading."
+      - "We'll add onto it with another sentence and probably just keep going until we run out of words."
+  - title: "Example 3"
+    description:
+      - "Paragraph of text beneath the heading to explain the heading."
+      - "We'll add onto it with another sentence and probably just keep going until we run out of words."

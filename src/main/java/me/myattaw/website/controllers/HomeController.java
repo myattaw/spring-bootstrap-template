@@ -29,11 +29,13 @@ public class HomeController {
     public String home(Model model) {
         List<List<RepositoryData>> repositoryData = githubDataService.getRepositoryDataList();
         WebsiteConfiguration config = githubDataService.getConfiguration();
+
         model.addAttribute("repositories", repositoryData);
         model.addAttribute("fullName", config.getFullName());
         model.addAttribute("description", String.join(" ", config.getDescription()));
         model.addAttribute("githubUrl", String.format("https://github.com/%s/", config.getGithubUsername()));
         model.addAttribute("linkedinUrl", String.format("https://www.linkedin.com/in/%s/", config.getLinkedInUsername()));
+        model.addAttribute("experiences", config.getExperience());
         return "home";
     }
 
