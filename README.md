@@ -1,4 +1,4 @@
-# bootstrap-github-template
+# spring-bootstrap-template
 
 A bootstrap template designed to display your github repositories and social media links.
 
